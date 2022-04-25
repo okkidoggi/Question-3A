@@ -65,7 +65,7 @@ public class ConsumerRabbitMQ : BackgroundService
         consumer.Unregistered += OnConsumerUnregistered;
         consumer.ConsumerCancelled += OnConsumerConsumerCancelled;
 
-        _channel.BasicConsume("greetings", false, consumer);
+        _channel.BasicConsume("TaskQueue", false, consumer);
         return Task.CompletedTask;
     }
 
